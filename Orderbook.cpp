@@ -1,5 +1,6 @@
-#include "OrderBook.hpp"
 #include <iostream>
+
+#include "OrderBook.hpp"
 
 uint64_t OrderBook::createUniqueOrderID() {
     static uint64_t uniqueOrderID{};

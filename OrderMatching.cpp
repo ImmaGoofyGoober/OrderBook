@@ -1,5 +1,6 @@
-#include "OrderMatching.hpp"
 #include <iostream>
+
+#include "OrderMatching.hpp"
 
 OrderMatching::OrderMatching(OrderBook& ob) : orderbook(ob) {}
 
@@ -41,7 +42,7 @@ void OrderMatching::orderMatching() {
                     bidQuantity -= askQuantity;
                     orderbook.bidOrders[{bidPrice, bidOrderID}].quantity = bidQuantity;
                     orderbook.eraseAskOrder(askPrice, askOrderID);
-                    std::cout << "\033[32mBid order updated and Ask order deleted\033[0m\n";
+                    /*std::cout << "\033[32mBid order updated and Ask order deleted\033[0m\n";
                     outputFile << "Bid order updated and Ask order deleted\n";
                     std::cout << "\033[32mRemaining Bid Quantity: \033[0m" << "\033[32m" << bidQuantity << "\033[0m" << "\n";
                     outputFile << "Remaining Bid Quantity: " << bidQuantity << "\n";
@@ -54,14 +55,14 @@ void OrderMatching::orderMatching() {
                     std::cout << "\033[32mAsk TraderID: \033[0m" << "\033[32m" << askTraderID << "\033[0m" << "\n";
                     outputFile << "Ask TraderID: " << askTraderID << "\n";
                     std::cout << "\033[32mOrderID: \033[0m" << "\033[32m" << bidOrderID << "\033[0m" << "\n";
-                    outputFile << "OrderID: " << bidOrderID << "\n";
+                    outputFile << "OrderID: " << bidOrderID << "\n";*/
                 }
                 else if (askQuantity > bidQuantity) {
                     filledOrders++;
                     askQuantity -= bidQuantity;
                     orderbook.askOrders[{askPrice, askOrderID}].quantity = askQuantity;
                     orderbook.eraseBidOrder(bidPrice, bidOrderID);
-                    std::cout << "\033[32mAsk order updated and Bid order deleted\033[0m\n";
+                    /*std::cout << "\033[32mAsk order updated and Bid order deleted\033[0m\n";
                     outputFile << "Ask order updated and Bid order deleted\n";
                     std::cout << "\033[32mRemaining Ask Quantity: \033[0m" << "\033[32m" << askQuantity << "\033[0m" << "\n";
                     outputFile << "Remaining Ask Quantity: " << askQuantity << "\n";
@@ -74,13 +75,13 @@ void OrderMatching::orderMatching() {
                     std::cout << "\033[32mAsk TraderID: \033[0m" << "\033[32m" << askTraderID << "\033[0m" << "\n";
                     outputFile << "Ask TraderID: " << askTraderID << "\n";
                     std::cout << "\033[32mOrderID: \033[0m" << "\033[32m" << askOrderID << "\033[0m" << "\n";
-                    outputFile << "OrderID: " << askOrderID << "\n";
+                    outputFile << "OrderID: " << askOrderID << "\n"; */
                 }
                 else {
                     filledOrders += 2;
                     orderbook.eraseBidOrder(bidPrice, bidOrderID);
                     orderbook.eraseAskOrder(askPrice, askOrderID);
-                    std::cout << "\033[31mBoth Orders deleted\033[0m\n";
+                    /*std::cout << "\033[31mBoth Orders deleted\033[0m\n";
                     outputFile << "Both Orders deleted\n";
                     std::cout << "\033[31mBid Price: \033[0m" << "\033[31m" << bidPrice << "\033[0m" << "\n";
                     outputFile << "Bid Price: " << bidPrice << "\n";
@@ -93,13 +94,13 @@ void OrderMatching::orderMatching() {
                     std::cout << "\033[31mBid OrderID: \033[0m" << "\033[31m" << bidOrderID << "\033[0m" << "\n";
                     outputFile << "Bid OrderID: " << bidOrderID << "\n";
                     std::cout << "\033[31mAsk OrderID: \033[0m" << "\033[31m" << askOrderID << "\033[0m" << "\n";
-                    outputFile << "Ask OrderID: " << askOrderID << "\n";
+                    outputFile << "Ask OrderID: " << askOrderID << "\n"; */
                 }
                 auto end = std::chrono::high_resolution_clock::now();
                 std::chrono::duration<double> duration = end - start;
 
-                std::cout << "Matched in " << duration.count() << " seconds\n\n";
-                outputFile << "Matched in " << duration.count() << " seconds\n\n";
+                /*std::cout << "Matched in " << duration.count() << " seconds\n\n";
+                outputFile << "Matched in " << duration.count() << " seconds\n\n"; */
             }
         }
     }

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <chrono>
+
 #include "OrderBook.hpp"
 #include "OrderMatching.hpp"
 #include "Testing.hpp"
@@ -12,7 +13,7 @@ int main() {
     OrderBook orderbook;
     OrderMatching matcher(orderbook);
 
-    int inputOrders = 1;
+    int inputOrders = 500000;
     int orderCount = 0;
 
     auto start = std::chrono::high_resolution_clock::now();

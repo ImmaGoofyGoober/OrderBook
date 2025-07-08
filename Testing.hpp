@@ -1,8 +1,9 @@
 #ifndef TESTING_HPP
 #define TESTING_HPP
 
-#include "OrderBook.hpp"
 #include <random>
+
+#include "OrderBook.hpp"
 
 uint32_t randomBidPrice(uint32_t minBidPrice, uint32_t maxBidPrice);
 uint32_t randomBidQuantity(uint32_t minBidQuantity, uint32_t maxBidQuantity);

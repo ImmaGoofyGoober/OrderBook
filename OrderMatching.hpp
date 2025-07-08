@@ -1,9 +1,10 @@
 #ifndef ORDERMATCHING_HPP
 #define ORDERMATCHING_HPP
 
-#include "OrderBook.hpp"
 #include <chrono>
 #include <fstream>
+
+#include "OrderBook.hpp"
 
 extern int filledOrders;
 extern std::ofstream outputFile;

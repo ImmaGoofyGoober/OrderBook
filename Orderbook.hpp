@@ -1,9 +1,10 @@
 #ifndef ORDERBOOK_HPP
 #define ORDERBOOK_HPP
 
-#include "Order.hpp"
 #include <map>
 #include <utility>
+
+#include "Order.hpp"
 
 class OrderBook {
 private:
