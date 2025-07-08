@@ -12,9 +12,9 @@ public:
     std::map<std::pair<uint64_t, uint64_t>, Order, std::greater<>> bidOrders;
     std::map<std::pair<uint64_t, uint64_t>, Order, std::less<>> askOrders;
 
-    void placeBidOrder(const Order& order);
+    uint64_t placeBidOrder(const Order& order);
     void eraseBidOrder(uint64_t price, uint64_t orderID);
-    void placeAskOrder(const Order& order);
+    uint64_t placeAskOrder(const Order& order);
     void eraseAskOrder(uint64_t price, uint64_t orderID);
 };
 

@@ -37,17 +37,16 @@ void trader1(OrderBook& orderbook) {
 
     uint32_t minBidPrice = 10;
     uint32_t maxBidPrice = 200;
-    uint32_t minBidQuantity = 30;
+    uint32_t minBidQuantity = 5;
     uint32_t maxBidQuantity = 300;
 
     uint32_t minAskPrice = 10;
     uint32_t maxAskPrice = 500;
-    uint32_t minAskQuantity = 5;
+    uint32_t minAskQuantity = 30;
     uint32_t maxAskQuantity = 300;
 
     randomBidOrders(orderbook, traderID, minBidPrice, maxBidPrice, minBidQuantity, maxBidQuantity);
     //randomAskOrders(orderbook, traderID, minAskPrice, maxAskPrice, minAskQuantity, maxAskQuantity);
-
 }
 
 void trader2(OrderBook& orderbook) {
@@ -66,3 +65,4 @@ void trader2(OrderBook& orderbook) {
     //randomBidOrders(orderbook, traderID, minBidPrice, maxBidPrice, minBidQuantity, maxBidQuantity);
     randomAskOrders(orderbook, traderID, minAskPrice, maxAskPrice, minAskQuantity, maxAskQuantity);
 }
+

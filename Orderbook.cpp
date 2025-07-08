@@ -6,9 +6,10 @@ uint64_t OrderBook::createUniqueOrderID() {
     return ++uniqueOrderID;
 }
 
-void OrderBook::placeBidOrder(const Order& order) {
+uint64_t OrderBook::placeBidOrder(const Order& order) {
     uint64_t orderID = createUniqueOrderID();
     bidOrders[{order.price, orderID}] = order;
+    return orderID;
 }
 
 void OrderBook::eraseBidOrder(uint64_t price, uint64_t orderID) {
@@ -20,9 +21,10 @@ void OrderBook::eraseBidOrder(uint64_t price, uint64_t orderID) {
     bidOrders.erase(it);
 }
 
-void OrderBook::placeAskOrder(const Order& order) {
+uint64_t OrderBook::placeAskOrder(const Order& order) {
     uint64_t orderID = createUniqueOrderID();
     askOrders[{order.price, orderID}] = order;
+    return orderID;
 }
 
 void OrderBook::eraseAskOrder(uint64_t price, uint64_t orderID) {
