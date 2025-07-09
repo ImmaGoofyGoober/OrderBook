@@ -1,15 +1,18 @@
-Bid order updated and Ask order deleted
-Remaining Bid Quantity: 8
-Bid Price: 197
-Ask Price: 127
+Ask order updated and Bid order deleted
+Remaining Ask Quantity: 2
+Bid Price: 100
+Ask Price: 96
 Bid TraderID: 1
 Ask TraderID: 2
-OrderID: 1
-Matched in 0.0009289 seconds
+OrderID: 2
+
+Current Price: 100
+
+Matched in 0.0012363 seconds
 
 Spread: N/A
 
 Unfilled Orders: 1
 Filled Orders: 1
 
-Total Duration: 0.0011991 seconds
+Total Duration: 0.0016526 seconds

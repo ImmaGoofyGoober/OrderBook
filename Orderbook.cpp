@@ -13,7 +13,7 @@ uint64_t OrderBook::placeBidOrder(const Order& order) {
     return orderID;
 }
 
-void OrderBook::eraseBidOrder(uint64_t price, uint64_t orderID) {
+void OrderBook::eraseBidOrder(uint32_t price, uint64_t orderID) {
     auto it = bidOrders.find({ price, orderID });
     if (it == bidOrders.end()) {
         std::cout << "Bid order not found\n";
@@ -28,7 +28,7 @@ uint64_t OrderBook::placeAskOrder(const Order& order) {
     return orderID;
 }
 
-void OrderBook::eraseAskOrder(uint64_t price, uint64_t orderID) {
+void OrderBook::eraseAskOrder(uint32_t price, uint64_t orderID) {
     auto it = askOrders.find({ price, orderID });
     if (it == askOrders.end()) {
         std::cout << "Ask order not found\n";

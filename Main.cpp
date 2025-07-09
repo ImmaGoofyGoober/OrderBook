@@ -6,14 +6,19 @@
 #include "OrderMatching.hpp"
 #include "Testing.hpp"
 
-int filledOrders = 0;
 std::ofstream outputFile("OrderBookOutput.txt");
+
+uint32_t currentPrice = 100;
+
+int filledOrders = 0;
+
+OrderType orderType{};
 
 int main() {
     OrderBook orderbook;
     OrderMatching matcher(orderbook);
 
-    int inputOrders = 500000;
+    int inputOrders = 1;
     int orderCount = 0;
 
     auto start = std::chrono::high_resolution_clock::now();
@@ -21,20 +26,19 @@ int main() {
     while (orderCount < inputOrders) {
         orderCount++;
         trader1(orderbook);
-        matcher.orderMatching();
+        matcher.orderMatching(orderType);
         trader2(orderbook);
-        matcher.orderMatching();
+        matcher.orderMatching(orderType);
     }
 
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> duration = end - start;
 
-    int unfilledOrders = orderbook.bidOrders.size() + orderbook.askOrders.size();
-
+    size_t unfilledOrders = orderbook.bidOrders.size() + orderbook.askOrders.size();
 
     if (!orderbook.bidOrders.empty() && !orderbook.askOrders.empty()) {
-        auto bestBid = orderbook.bidOrders.begin()->first.first;
-        auto bestAsk = orderbook.askOrders.begin()->first.first;
+        uint32_t bestBid = orderbook.bidOrders.begin()->first.first;
+        uint32_t bestAsk = orderbook.askOrders.begin()->first.first;
         std::cout << "Spread: " << (bestAsk - bestBid) << "\n\n";
         outputFile << "Spread: " << (bestAsk - bestBid) << "\n\n";
     }

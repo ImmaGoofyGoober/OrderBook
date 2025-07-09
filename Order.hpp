@@ -8,7 +8,7 @@ enum class OrderType {
 };
 
 struct Order {
-    uint64_t price{};
+    uint32_t price{};
     uint32_t quantity{};
     uint64_t traderID{};
     OrderType orderType{};
@@ -18,6 +18,11 @@ struct Order {
         quantity = 0;
         traderID = 0;
     }
+};
+
+struct ActiveOrder {
+    bool activeBidOrder{};
+    bool activeAskOrder{};
 };
 
 #endif

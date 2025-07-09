@@ -7,6 +7,9 @@
 #include "OrderBook.hpp"
 
 extern int filledOrders;
+
+extern uint32_t currentPrice;
+
 extern std::ofstream outputFile;
 
 class OrderMatching {
@@ -14,7 +17,7 @@ public:
     OrderBook& orderbook;
 
     OrderMatching(OrderBook& ob);
-    void orderMatching();
+    void orderMatching(OrderType& ordertype);
 };
 
 #endif 

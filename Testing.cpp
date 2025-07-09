@@ -32,37 +32,51 @@ void randomAskOrders(OrderBook& orderbook, uint64_t traderID, uint32_t minAskPri
     orderbook.placeAskOrder(askOrder);
 }
 
+// Add check for active order types
+
 void trader1(OrderBook& orderbook) {
     uint64_t traderID = 1;
 
-    uint32_t minBidPrice = 50;
-    uint32_t maxBidPrice = 200;
-    uint32_t minBidQuantity = 1;
-    uint32_t maxBidQuantity = 300;
+    uint32_t minBidPrice = 80;
+    uint32_t maxBidPrice = 110;
+    uint32_t minBidQuantity = 5;
+    uint32_t maxBidQuantity = 15;
 
-    uint32_t minAskPrice = 100;
-    uint32_t maxAskPrice = 250;
-    uint32_t minAskQuantity = 10;
-    uint32_t maxAskQuantity = 300;
+    uint32_t minAskPrice = 0;
+    uint32_t maxAskPrice = 0;
+    uint32_t minAskQuantity = 0;
+    uint32_t maxAskQuantity = 0;
 
-    randomBidOrders(orderbook, traderID, minBidPrice, maxBidPrice, minBidQuantity, maxBidQuantity);
-    //randomAskOrders(orderbook, traderID, minAskPrice, maxAskPrice, minAskQuantity, maxAskQuantity);
+    if (currentPrice <= 110) {
+        randomBidOrders(orderbook, traderID, minBidPrice, maxBidPrice, minBidQuantity, maxBidQuantity);
+        orderType = OrderType::BID;
+    }
+    /*if (currentPrice >= 80) {
+        randomAskOrders(orderbook, traderID, minAskPrice, maxAskPrice, minAskQuantity, maxAskQuantity);
+        orderType = OrderType::ASK;
+    }*/
 }
 
 void trader2(OrderBook& orderbook) {
     uint64_t traderID = 2;
 
-    uint32_t minBidPrice = 10;
-    uint32_t maxBidPrice = 100;
-    uint32_t minBidQuantity = 1;
-    uint32_t maxBidQuantity = 100;
+    uint32_t minBidPrice = 0;
+    uint32_t maxBidPrice = 0;
+    uint32_t minBidQuantity = 0;
+    uint32_t maxBidQuantity = 0;
 
-    uint32_t minAskPrice = 50;
-    uint32_t maxAskPrice = 150;
+    uint32_t minAskPrice = 90;
+    uint32_t maxAskPrice = 120;
     uint32_t minAskQuantity = 5;
-    uint32_t maxAskQuantity = 200;
+    uint32_t maxAskQuantity = 15;
 
-    //randomBidOrders(orderbook, traderID, minBidPrice, maxBidPrice, minBidQuantity, maxBidQuantity);
-    randomAskOrders(orderbook, traderID, minAskPrice, maxAskPrice, minAskQuantity, maxAskQuantity);
+    /*if (currentPrice <= 160) {
+        randomBidOrders(orderbook, traderID, minBidPrice, maxBidPrice, minBidQuantity, maxBidQuantity);
+        orderType = OrderType::BID;
+    }*/
+    if (currentPrice >= 90) {
+        randomAskOrders(orderbook, traderID, minAskPrice, maxAskPrice, minAskQuantity, maxAskQuantity);
+        orderType = OrderType::ASK;
+    }
 }
 
