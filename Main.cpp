@@ -18,7 +18,7 @@ int main() {
     OrderBook orderbook;
     OrderMatching matcher(orderbook);
 
-    int inputOrders = 1;
+    int inputOrders = 5000;
     int orderCount = 0;
 
     auto start = std::chrono::high_resolution_clock::now();

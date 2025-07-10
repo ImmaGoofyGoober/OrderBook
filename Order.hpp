@@ -20,9 +20,4 @@ struct Order {
     }
 };
 
-struct ActiveOrder {
-    bool activeBidOrder{};
-    bool activeAskOrder{};
-};
-
 #endif

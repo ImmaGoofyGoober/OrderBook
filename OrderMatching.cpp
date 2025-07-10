@@ -1,3 +1,4 @@
+
 #include <iostream>
 
 #include "OrderMatching.hpp"
@@ -36,7 +37,7 @@ void OrderMatching::orderMatching(OrderType& ordertype) {
             auto start = std::chrono::high_resolution_clock::now();
 
             if (bidTraderID == askTraderID) {
-                break; 
+                break;
             }
             else {
                 if (bidQuantity > askQuantity) {
@@ -77,7 +78,7 @@ void OrderMatching::orderMatching(OrderType& ordertype) {
                     std::cout << "\033[32mAsk TraderID: \033[0m" << "\033[32m" << askTraderID << "\033[0m" << "\n";
                     outputFile << "Ask TraderID: " << askTraderID << "\n";
                     std::cout << "\033[32mOrderID: \033[0m" << "\033[32m" << askOrderID << "\033[0m" << "\n\n";
-                    outputFile << "OrderID: " << askOrderID << "\n\n"; 
+                    outputFile << "OrderID: " << askOrderID << "\n\n";
                 }
                 else {
                     filledOrders += 2;
@@ -96,8 +97,8 @@ void OrderMatching::orderMatching(OrderType& ordertype) {
                     std::cout << "\033[31mBid OrderID: \033[0m" << "\033[31m" << bidOrderID << "\033[0m" << "\n";
                     outputFile << "Bid OrderID: " << bidOrderID << "\n";
                     std::cout << "\033[31mAsk OrderID: \033[0m" << "\033[31m" << askOrderID << "\033[0m" << "\n\n";
-                    outputFile << "Ask OrderID: " << askOrderID << "\n\n"; 
-                }       
+                    outputFile << "Ask OrderID: " << askOrderID << "\n\n";
+                }
                 if (ordertype == OrderType::BID) {
                     currentPrice = askPrice;
                     std::cout << "\033[33mCurrent Price: \033[0m" << "\033[33m" << currentPrice << "\033[0m" << "\n\n";
@@ -112,7 +113,7 @@ void OrderMatching::orderMatching(OrderType& ordertype) {
                 std::chrono::duration<double> duration = end - start;
 
                 std::cout << "Matched in " << duration.count() << " seconds\n\n";
-                outputFile << "Matched in " << duration.count() << " seconds\n\n"; 
+                outputFile << "Matched in " << duration.count() << " seconds\n\n";
             }
         }
     }

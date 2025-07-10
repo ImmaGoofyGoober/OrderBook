@@ -1,3 +1,4 @@
+
 #ifndef ORDERBOOK_HPP
 #define ORDERBOOK_HPP
 
@@ -15,9 +16,9 @@ public:
     std::map<std::pair<uint32_t, uint64_t>, Order, std::less<>> askOrders;
 
     uint64_t placeBidOrder(const Order& order);
-    void eraseBidOrder(uint32_t price, uint64_t orderID);
+    void eraseBidOrder(const uint32_t price, const uint64_t orderID);
     uint64_t placeAskOrder(const Order& order);
-    void eraseAskOrder(uint32_t price, uint64_t orderID);
+    void eraseAskOrder(const uint32_t price, const uint64_t orderID);
 };
 
 #endif
