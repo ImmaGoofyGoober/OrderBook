@@ -14,6 +14,8 @@ extern uint32_t currentPrice;
 extern std::ofstream outputFile;
 
 class OrderMatching {
+private:
+
 public:
     OrderBook& orderbook;
 
@@ -22,3 +24,4 @@ public:
 };
 
 #endif 
+
